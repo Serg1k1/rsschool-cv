@@ -1,5 +1,218 @@
-@import url('reset.css');
+@import url("reset.css");
 /* ----------------------------- */
 /* ----------------------------- */
 /* ----------------------------- */
+/* ----------------------------- */
+
+body {
+    font-family: 'Fira Code', monospace;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #282C33;
+    color: #FFF;
+}
+
+.menu-open body {
+    overflow: hidden;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: clip;
+}
+
+/* ----------------------------- */
+
+[class*="__container"] {
+    max-width: 1054px;
+    margin: 0 auto;
+    padding: 0 15px;  
+}
+/* ----------------------------- */
+.page {
+    flex: 1 1 auto;
+}
+/* ----------------------------- */
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    position: relative;
+}
+
+.icons-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    left: 2%;
+    top: 0;
+    z-index: 1;
+}
+.icons-header__line {
+    display: block;
+    width: 1px;
+    height: 191px;
+    background-color: #ABB2BF;
+}
+.icons-header__item {
+    color: #ABB2BF;
+    font-size: 32px;
+    transition: all 0.3s ease;
+}
+.icons-header__item:hover {
+    color: #fff;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 54px;
+    background-color: rgb(40, 44, 51);
+    border-bottom: 1px solid rgb(30, 30, 38);
+    z-index: 2;
+}
+.header__container {
+    display: flex;
+    column-gap: 32px;
+    min-height: 54px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    align-items: center;
+}
+.header__logo {
+    display: flex;
+    gap: 8px;
+    position: relative;
+    z-index: 5;
+}
+.header__logo span {
+    color: #FFF;
+    font-weight: 700;
+}
+.header__menu {
+    flex: 1 1 auto;
+}
+
+.menu {}
+.menu__body {
+    position: relative;
+    z-index: 5;
+}
+.menu__list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 32px;
+    flex-wrap: wrap;
+}
+.menu__item {}
+.menu__link {
+    color:#ABB2BF;
+    font-weight: 400;
+    transition: all 0.3s ease;
+}
+.menu__link span {
+    color: #C778DD;    
+}
+.menu__link:hover {
+    color: #fff;
+}
+
+.icon-menu {
+    display: none;
+}
+
+.icons-menu {
+    display: none;
+}
+@media (max-width: 569px) {
+    .menu__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 50px;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: -100%;
+        transition: all 0.3s ease;
+        background-color: #282C33;
+        padding: 100px 15px 20px 15px;
+        overflow: auto;
+        z-index: 1  ;
+    }
+    .menu-open .menu__body {
+        left: 0;
+    }
+    .menu__list {
+        flex-direction: column;
+        row-gap: 35px;
+    }
+    .menu__link {
+        font-size: 30px;
+    }
+
+    .icon-menu {
+        display: block;
+        position: relative;
+        z-index: 5;
+        width: 30px;
+        height: 18px;   
+    }
+
+    .icon-menu__line, 
+    .icon-menu::before,
+    .icon-menu::after {
+        content: "";
+        position: absolute;
+        background-color: #D9D9D9;
+        height: 2px;
+        width: 100%;
+        left: 0;
+        transition: all 0.3s ease;
+    }
+    .icon-menu::before {
+        top: 0;
+    }
+    .icon-menu__line {
+        top: calc(50% - 1px);
+    }
+    .icon-menu::after {
+        bottom: 0;
+    }
+    .menu-open .icon-menu::before{
+        top: calc(50% - 1px); 
+        transform: rotate(-45deg);      
+    }
+    .menu-open .icon-menu::after{
+        bottom: calc(50% - 1px); 
+        transform: rotate(45deg);      
+    }
+    .menu-open .icon-menu__line {
+        left: 50%;
+        width: 0;
+    }
+    .icons-menu {
+        display: flex;
+        gap: 40px;
+    }
+    .icons-menu__icon {
+        font-size: 42px;
+        color: #ABB2BF;
+    }
+    .icons-header {
+        display: none;
+    }
+}
 /* ----------------------------- */
