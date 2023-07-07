@@ -1254,3 +1254,57 @@ body {
         display: none;
     }
 }
+
+/* ----------------------------- */
+.contacts__decor {
+    padding-bottom: 10px;
+}
+
+.contacts__decor::before {
+    top: 80%;
+}
+
+.contacts__decor::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    width: 155px;
+    height: 155px;
+    background: url('../img/projects/sqarebig.svg') no-repeat center;      
+}
+
+@media (max-width: 1300px) {
+    .contacts__decor::after {
+        display: none;
+    }    
+}
+/* ----------------------------- */
+.media {
+    padding-top: 10px;
+    padding-bottom: 80px;
+}
+.media__container {
+}
+.media__items {
+    display: flex;
+    gap: 22px;
+}
+.media__item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #ABB2BF;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+.media__item i{
+    font-size: 28px;
+}
+@media (max-width: 767.98px) {
+    .media {
+        padding-bottom: 30px;
+    }
+}
+/* ----------------------------- */
